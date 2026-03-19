@@ -737,10 +737,10 @@
         }
         .fw-node .fw-sub { display: block; font-weight: 400; opacity: 0.85; margin-top: 2px; font-size: 0.85em; }
         .fw-valion { left: 50%; top: 0; transform: translateX(-50%); background: var(--valion-navy); color: #fff; }
-        .fw-start { left: 18%; top: 25%; transform: translateX(-50%); background: var(--valion-navy); color: #fff; opacity: 0.8; font-size: clamp(0.5rem, 0.75vw, 0.65rem); }
-        .fw-appraisal { right: 18%; top: 25%; transform: translateX(50%); background: var(--valion-navy); color: #fff; opacity: 0.8; font-size: clamp(0.5rem, 0.75vw, 0.65rem); }
-        .fw-dozen { left: 0; top: 55%; transform: translateY(-50%); background: var(--dozen-teal); color: #fff; }
-        .fw-ff { right: 0; top: 55%; transform: translateY(-50%); background: var(--ff-blue); color: #fff; }
+        .fw-start { left: 14%; top: 22%; transform: translateX(-50%); background: var(--valion-navy); color: #fff; opacity: 0.8; font-size: clamp(0.5rem, 0.75vw, 0.65rem); }
+        .fw-appraisal { right: 14%; top: 22%; transform: translateX(50%); background: var(--valion-navy); color: #fff; opacity: 0.8; font-size: clamp(0.5rem, 0.75vw, 0.65rem); }
+        .fw-dozen { left: 0; top: 50%; transform: translateY(-50%); background: var(--dozen-teal); color: #fff; }
+        .fw-ff { right: 0; top: 50%; transform: translateY(-50%); background: var(--ff-blue); color: #fff; }
         .fw-boost { left: 50%; bottom: 0; transform: translateX(-50%); background: var(--orbyn-blue); color: #fff; }
         /* SVG arrows */
         .flywheel-flow svg {
@@ -999,34 +999,34 @@
             <h2 class="reveal" style="text-align: center;">Flywheel <span class="accent">Interno</span></h2>
             <div class="flywheel-container reveal-scale">
                 <div class="flywheel-flow">
-                    <svg viewBox="0 0 700 450" preserveAspectRatio="xMidYMid meet">
+                    <svg viewBox="0 0 700 480" preserveAspectRatio="xMidYMid meet">
                         <defs>
                             <marker id="arrowhead" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
                                 <polygon points="0 0, 8 3, 0 6" fill="#6b6b6b"/>
                             </marker>
                         </defs>
-                        <!-- Valion → Start (left) -->
-                        <line x1="305" y1="55" x2="145" y2="100" class="fw-arrow-line"/>
-                        <!-- Valion → Appraisal (right) -->
-                        <line x1="395" y1="55" x2="555" y2="100" class="fw-arrow-line"/>
+                        <!-- Valion → Start (left, from bottom-left of Valion to top of Start) -->
+                        <path d="M 300 65 Q 220 80, 145 110" class="fw-arrow-line" fill="none"/>
+                        <!-- Valion → Appraisal (right, from bottom-right of Valion to top of Appraisal) -->
+                        <path d="M 400 65 Q 480 80, 555 110" class="fw-arrow-line" fill="none"/>
 
-                        <!-- Start → Dozen -->
-                        <line x1="115" y1="135" x2="80" y2="220" class="fw-arrow-line"/>
+                        <!-- Start → Dozen (from bottom of Start to top of Dozen) -->
+                        <path d="M 115 155 Q 105 175, 95 240" class="fw-arrow-line" fill="none"/>
 
-                        <!-- Appraisal → Fellow Funders -->
-                        <line x1="585" y1="135" x2="615" y2="220" class="fw-arrow-line"/>
+                        <!-- Appraisal → Fellow Funders (from bottom of Appraisal to top of FF) -->
+                        <path d="M 585 155 Q 595 175, 605 240" class="fw-arrow-line" fill="none"/>
 
                         <!-- Cross-sell inversores Dozen ↔ FF -->
-                        <line x1="160" y1="260" x2="545" y2="260" class="fw-arrow-line"/>
-                        <text x="290" y="280" class="fw-arrow-label">Cross-sell inversores</text>
+                        <line x1="175" y1="275" x2="530" y2="275" class="fw-arrow-line"/>
+                        <text x="285" y="298" class="fw-arrow-label">Cross-sell inversores</text>
 
-                        <!-- Dozen → Orbyn Boost -->
-                        <line x1="100" y1="295" x2="290" y2="375" class="fw-arrow-line"/>
-                        <text x="130" y="345" class="fw-arrow-label">Fin. p&uacute;blica</text>
+                        <!-- Dozen → Orbyn Boost (from bottom of Dozen, curve down to Boost) -->
+                        <path d="M 110 310 Q 180 380, 295 410" class="fw-arrow-line" fill="none"/>
+                        <text x="130" y="375" class="fw-arrow-label">Fin. p&uacute;blica</text>
 
-                        <!-- FF → Orbyn Boost -->
-                        <line x1="600" y1="295" x2="420" y2="375" class="fw-arrow-line"/>
-                        <text x="490" y="345" class="fw-arrow-label">Fin. p&uacute;blica</text>
+                        <!-- FF → Orbyn Boost (from bottom of FF, curve down to Boost) -->
+                        <path d="M 590 310 Q 520 380, 415 410" class="fw-arrow-line" fill="none"/>
+                        <text x="475" y="375" class="fw-arrow-label">Fin. p&uacute;blica</text>
                     </svg>
                     <div class="fw-node fw-valion">Valion<span class="fw-sub">Valoraci&oacute;n con IA</span></div>
                     <div class="fw-node fw-start">Start<span class="fw-sub">Startups</span></div>
