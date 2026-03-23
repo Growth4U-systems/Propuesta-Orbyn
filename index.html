@@ -683,8 +683,8 @@
         .track-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: clamp(0.5rem, 1.2vw, 1rem);
-            margin-top: clamp(0.5rem, 1.5vh, 1rem);
+            gap: clamp(0.8rem, 1.5vw, 1.2rem);
+            margin-top: clamp(1rem, 3vh, 2rem);
         }
         @media (max-width: 700px) {
             .track-grid { grid-template-columns: repeat(2, 1fr); }
@@ -692,22 +692,22 @@
         .track-card {
             background: #fff;
             border: 1px solid var(--orbyn-light-gray);
-            border-radius: 10px;
-            padding: clamp(0.8rem, 1.5vh, 1.2rem) clamp(0.8rem, 1.5vw, 1.2rem);
+            border-radius: 12px;
+            padding: clamp(1.2rem, 2.5vh, 2rem) clamp(1rem, 2vw, 1.5rem);
         }
         .track-name {
             font-weight: 700;
-            font-size: var(--body-size);
-            margin-bottom: clamp(0.1rem, 0.3vh, 0.2rem);
+            font-size: clamp(1rem, 1.4vw, 1.2rem);
+            margin-bottom: clamp(0.2rem, 0.4vh, 0.3rem);
         }
         .track-type {
-            font-size: clamp(0.6rem, 0.8vw, 0.7rem);
+            font-size: clamp(0.7rem, 0.9vw, 0.8rem);
             opacity: 0.5;
-            margin-bottom: clamp(0.3rem, 0.6vh, 0.5rem);
+            margin-bottom: clamp(0.5rem, 1vh, 0.8rem);
         }
         .track-stat {
             font-family: var(--font-display);
-            font-size: clamp(0.9rem, 1.5vw, 1.25rem);
+            font-size: clamp(1.1rem, 1.8vw, 1.5rem);
             font-weight: 700;
             color: var(--orbyn-blue);
             line-height: 1.3;
@@ -934,25 +934,25 @@
                     <div class="track-name">Bnext</div>
                     <div class="track-type">Neobank</div>
                     <div class="track-stat">0 &rarr; 500K usuarios</div>
-                    <div style="font-size: var(--small-size); opacity: 0.6; margin-top: 4px;">CAC &euro;12.50 (comp: &euro;30-50)<br>19% boca a boca</div>
+                    <div style="font-size: var(--body-size); opacity: 0.6; margin-top: clamp(0.4rem, 0.8vh, 0.6rem);">CAC &euro;12.50 (comp: &euro;30-50)<br>19% boca a boca</div>
                 </div>
                 <div class="track-card">
                     <div class="track-name">Bit2Me</div>
                     <div class="track-type">Crypto / Finanzas</div>
                     <div class="track-stat">-70% CAC</div>
-                    <div style="font-size: var(--small-size); opacity: 0.6; margin-top: 4px;">2&times; activacion<br>2&times; LTV</div>
+                    <div style="font-size: var(--body-size); opacity: 0.6; margin-top: clamp(0.4rem, 0.8vh, 0.6rem);">2&times; activacion<br>2&times; LTV</div>
                 </div>
                 <div class="track-card">
                     <div class="track-name">GoCardless</div>
                     <div class="track-type">B2B Payments</div>
                     <div class="track-stat">&euro;0 &rarr; &euro;10K MRR</div>
-                    <div style="font-size: var(--small-size); opacity: 0.6; margin-top: 4px;">6 meses<br>ES + PT desde cero</div>
+                    <div style="font-size: var(--body-size); opacity: 0.6; margin-top: clamp(0.4rem, 0.8vh, 0.6rem);">6 meses<br>ES + PT desde cero</div>
                 </div>
                 <div class="track-card">
                     <div class="track-name">Multiplo</div>
                     <div class="track-type">Inversion</div>
                     <div class="track-stat">150 leads &rarr; 20 clientes</div>
-                    <div style="font-size: var(--small-size); opacity: 0.6; margin-top: 4px;">&lt;2 meses<br>ROI positivo</div>
+                    <div style="font-size: var(--body-size); opacity: 0.6; margin-top: clamp(0.4rem, 0.8vh, 0.6rem);">&lt;2 meses<br>ROI positivo</div>
                 </div>
             </div>
         </div>
