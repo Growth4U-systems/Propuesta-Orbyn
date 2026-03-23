@@ -692,22 +692,22 @@
         .track-card {
             background: #fff;
             border: 1px solid var(--orbyn-light-gray);
-            border-radius: 8px;
-            padding: clamp(0.6rem, 1vh, 1rem) clamp(0.5rem, 1vw, 0.8rem);
+            border-radius: 10px;
+            padding: clamp(0.8rem, 1.5vh, 1.2rem) clamp(0.8rem, 1.5vw, 1.2rem);
         }
         .track-name {
             font-weight: 700;
-            font-size: var(--small-size);
+            font-size: var(--body-size);
             margin-bottom: clamp(0.1rem, 0.3vh, 0.2rem);
         }
         .track-type {
-            font-size: clamp(0.55rem, 0.7vw, 0.65rem);
+            font-size: clamp(0.6rem, 0.8vw, 0.7rem);
             opacity: 0.5;
-            margin-bottom: clamp(0.2rem, 0.5vh, 0.4rem);
+            margin-bottom: clamp(0.3rem, 0.6vh, 0.5rem);
         }
         .track-stat {
             font-family: var(--font-display);
-            font-size: clamp(0.8rem, 1.3vw, 1.1rem);
+            font-size: clamp(0.9rem, 1.5vw, 1.25rem);
             font-weight: 700;
             color: var(--orbyn-blue);
             line-height: 1.3;
@@ -1005,28 +1005,37 @@
                                 <polygon points="0 0, 8 3, 0 6" fill="#6b6b6b"/>
                             </marker>
                         </defs>
-                        <!-- Valion → Start (left, from bottom-left of Valion to top of Start) -->
+                        <defs>
+                            <marker id="arrowhead2" markerWidth="8" markerHeight="6" refX="1" refY="3" orient="auto">
+                                <polygon points="8 0, 0 3, 8 6" fill="#6b6b6b"/>
+                            </marker>
+                        </defs>
+                        <!-- Valion → Start -->
                         <path d="M 300 65 Q 220 80, 145 110" class="fw-arrow-line" fill="none"/>
-                        <!-- Valion → Appraisal (right, from bottom-right of Valion to top of Appraisal) -->
+                        <!-- Valion → Appraisal -->
                         <path d="M 400 65 Q 480 80, 555 110" class="fw-arrow-line" fill="none"/>
 
-                        <!-- Start → Dozen (from bottom of Start to top of Dozen) -->
-                        <path d="M 115 155 Q 105 175, 95 240" class="fw-arrow-line" fill="none"/>
+                        <!-- Start → Dozen -->
+                        <path d="M 100 155 Q 85 185, 80 240" class="fw-arrow-line" fill="none"/>
+                        <!-- Start → Orbyn Boost -->
+                        <path d="M 130 155 Q 200 310, 295 410" class="fw-arrow-line" fill="none" stroke-dasharray="5,3"/>
 
-                        <!-- Appraisal → Fellow Funders (from bottom of Appraisal to top of FF) -->
-                        <path d="M 585 155 Q 595 175, 605 240" class="fw-arrow-line" fill="none"/>
+                        <!-- Appraisal → Fellow Funders -->
+                        <path d="M 600 155 Q 615 185, 620 240" class="fw-arrow-line" fill="none"/>
+                        <!-- Appraisal → Orbyn Boost -->
+                        <path d="M 570 155 Q 500 310, 415 410" class="fw-arrow-line" fill="none" stroke-dasharray="5,3"/>
 
                         <!-- Cross-sell inversores Dozen ↔ FF -->
-                        <line x1="175" y1="275" x2="530" y2="275" class="fw-arrow-line"/>
-                        <text x="285" y="298" class="fw-arrow-label">Cross-sell inversores</text>
+                        <line x1="175" y1="275" x2="530" y2="275" class="fw-arrow-line" marker-start="url(#arrowhead2)"/>
+                        <text x="270" y="265" class="fw-arrow-label">Cross-sell inversores</text>
 
-                        <!-- Dozen → Orbyn Boost (from bottom of Dozen, curve down to Boost) -->
-                        <path d="M 110 310 Q 180 380, 295 410" class="fw-arrow-line" fill="none"/>
-                        <text x="130" y="375" class="fw-arrow-label">Fin. p&uacute;blica</text>
+                        <!-- Dozen → Orbyn Boost -->
+                        <path d="M 90 310 Q 160 390, 295 420" class="fw-arrow-line" fill="none"/>
+                        <text x="120" y="385" class="fw-arrow-label">Fin. p&uacute;blica</text>
 
-                        <!-- FF → Orbyn Boost (from bottom of FF, curve down to Boost) -->
-                        <path d="M 590 310 Q 520 380, 415 410" class="fw-arrow-line" fill="none"/>
-                        <text x="475" y="375" class="fw-arrow-label">Fin. p&uacute;blica</text>
+                        <!-- FF → Orbyn Boost -->
+                        <path d="M 610 310 Q 540 390, 415 420" class="fw-arrow-line" fill="none"/>
+                        <text x="480" y="385" class="fw-arrow-label">Fin. p&uacute;blica</text>
                     </svg>
                     <div class="fw-node fw-valion">Valion<span class="fw-sub">Valoraci&oacute;n con IA</span></div>
                     <div class="fw-node fw-start">Start<span class="fw-sub">Startups</span></div>
@@ -1037,7 +1046,7 @@
                 </div>
             </div>
             <p class="reveal" style="text-align: center; max-width: 680px; margin: clamp(0.5rem, 1.5vh, 1rem) auto 0; font-size: var(--small-size);">
-                <strong>Valion valora la empresa.</strong> Start deriva a <strong>Dozen</strong> (crowdfunding startups). Appraisal deriva a <strong>Fellow Funders</strong> (inmobiliario, agro, PYMEs). <strong>Orbyn Boost</strong> es transversal: cualquier empresa del ecosistema puede acceder a financiaci&oacute;n p&uacute;blica. El cross-sell de inversores conecta ambos lados &mdash; un ciclo cerrado que ning&uacute;n competidor puede replicar.
+                <strong>Valion valora la empresa.</strong> Si es startup &rarr; <strong>Start</strong> puede derivar a <strong>Dozen</strong> y/o <strong>Orbyn Boost</strong>. Si es empresa madura &rarr; <strong>Appraisal</strong> puede derivar a <strong>Fellow Funders</strong> y/o <strong>Orbyn Boost</strong>. <strong>Orbyn Boost</strong> es transversal: cualquier empresa del ecosistema puede acceder a financiaci&oacute;n p&uacute;blica (ENISA, CDTI, subvenciones). El cross-sell de inversores conecta ambos lados &mdash; un ciclo cerrado que ning&uacute;n competidor puede replicar.
             </p>
         </div>
         <span class="slide-num">05</span>
@@ -1140,7 +1149,7 @@
                 Valoracion de empresas<br><span class="accent">con IA</span>
             </h1>
             <p class="reveal" style="margin-top: clamp(0.5rem, 1vh, 0.8rem); max-width: 450px; margin-left: auto; margin-right: auto;">
-                Alternativa agil y accesible a Big Four para el mid-market espa&ntilde;ol.
+                &ldquo;La precisi&oacute;n de un analista, la velocidad de la IA.&rdquo; Alternativa a Big Four para el mid-market.
             </p>
         </div>
         <span class="slide-num">08</span>
@@ -1151,8 +1160,8 @@
         <div class="mountain-gradient"></div>
         <div class="slide-content">
             <div class="slide-label reveal">Diagnostico</div>
-            <h2 class="reveal">Producto solido.<br><span class="accent">Visibilidad cero.</span></h2>
-            <p class="reveal" style="max-width: 620px; margin-top: clamp(0.2rem, 0.4vh, 0.3rem);">Valion tiene tecnologia de IA que reduce tiempos y costes frente a las alternativas tradicionales, casos reales validados y planes comerciales activos. El problema es que compite contra Big Four y boutiques M&A sin que nadie sepa que existe. Web live pero invisible donde los decisores investigan.</p>
+            <h2 class="reveal">Producto solido.<br><span class="accent">Visibilidad escasa.</span></h2>
+            <p class="reveal" style="max-width: 620px; margin-top: clamp(0.2rem, 0.4vh, 0.3rem);">Valion automatiza valoraciones empresariales con IA &mdash; &ldquo;la precisi&oacute;n de un analista, la velocidad de la IA&rdquo;. 4 productos (Appraisal, Portfolio, Start, Academy), casos reales validados (Onirix, Text Radar, Negozia) y partnerships activos (ESIC, BIGBAN, Statista). Pero compite contra Big Four y boutiques M&A sin visibilidad donde los decisores investigan.</p>
             <div class="two-col" style="margin-top: clamp(0.5rem, 1.2vh, 0.8rem);">
                 <div class="reveal">
                     <div class="feature-item">
@@ -1165,7 +1174,7 @@
                     </div>
                     <div class="feature-item">
                         <span class="feature-icon"></span>
-                        <span class="feature-text"><strong>Validacion:</strong> Casos reales (Onirix, Text Radar) &mdash; planes activos, post pre-revenue</span>
+                        <span class="feature-text"><strong>Validacion:</strong> Casos reales (Onirix, Text Radar, Negozia) &mdash; testimonios p&uacute;blicos, post pre-revenue</span>
                     </div>
                     <div class="feature-item">
                         <span class="feature-icon"></span>
@@ -1230,7 +1239,8 @@
         <div class="mountain-gradient"></div>
         <div class="slide-content">
             <div class="slide-label reveal">Unit Economics</div>
-            <h2 class="reveal">Metricas <span class="accent">a validar</span></h2>
+            <h2 class="reveal">Metricas <span class="accent">que construiremos juntos</span></h2>
+            <p class="reveal" style="max-width: 620px; margin-top: clamp(0.2rem, 0.4vh, 0.3rem);">Hoy estas m&eacute;tricas no existen porque Valion no ha tenido un equipo de growth dedicado. Eso es exactamente lo que vamos a resolver. En las primeras semanas de trabajo conjunto, estableceremos los baselines reales y construiremos el sistema de medici&oacute;n.</p>
             <div class="stat-grid reveal" style="margin-top: clamp(0.8rem, 2vh, 1.2rem);">
                 <div class="stat-card">
                     <div class="stat-number" style="color: var(--valion-gold);">?</div>
@@ -1251,7 +1261,7 @@
             </div>
             <div class="highlight-box reveal">
                 <p style="font-size: var(--small-size); opacity: 1;">
-                    <strong>Necesitamos:</strong> Pricing por servicio &middot; N&ordm; clientes activos &middot; Fuentes de captacion actual &middot; Perfil de cliente tipo. Se validara en la Fase Foundation (Abril-Mayo).
+                    <strong>Primer paso:</strong> Reuniones con el equipo de Valion para mapear pricing por servicio, clientes activos, fuentes de captaci&oacute;n y perfil de cliente tipo. Con esos datos, en la Fase Foundation (Abril-Mayo) construimos los dashboards y definimos targets reales &mdash; no estimaciones, sino m&eacute;tricas basadas en datos propios.
                 </p>
             </div>
         </div>
@@ -1276,7 +1286,7 @@
                 Financiacion ENISA<br><span class="accent">& Subvenciones</span>
             </h1>
             <p class="reveal" style="margin-top: clamp(0.5rem, 1vh, 0.8rem); max-width: 450px; margin-left: auto; margin-right: auto;">
-                La puerta de entrada al ecosistema Orbyn. ENISA para empresas jovenes e innovadoras.
+                Transversal al ecosistema. ENISA, CDTI y subvenciones para startups y proyectos de econom&iacute;a real.
             </p>
         </div>
         <span class="slide-num">12</span>
@@ -1357,7 +1367,8 @@
         <div class="texture-overlay"></div>
         <div class="slide-content">
             <div class="slide-label reveal">Unit Economics</div>
-            <h2 class="reveal">Metricas <span class="accent">a validar</span></h2>
+            <h2 class="reveal">Metricas <span class="accent">que construiremos juntos</span></h2>
+            <p class="reveal" style="max-width: 620px; margin-top: clamp(0.2rem, 0.4vh, 0.3rem);">Orbyn Boost ha asesorado +100 empresas pero nunca ha medido su embudo de captaci&oacute;n de forma sist&eacute;mica. En las primeras semanas mapeamos el funnel real y establecemos baselines.</p>
             <div class="stat-grid reveal" style="margin-top: clamp(0.8rem, 2vh, 1.2rem);">
                 <div class="stat-card">
                     <div class="stat-number" style="color: var(--orbyn-blue);">?</div>
@@ -1378,7 +1389,7 @@
             </div>
             <div class="highlight-box reveal">
                 <p style="font-size: var(--small-size); opacity: 1;">
-                    <strong>Necesitamos:</strong> Fee medio por expediente &middot; Tasa de conversion lead &rarr; expediente &middot; % que viene de otras marcas del grupo. Se validara en la Fase Foundation.
+                    <strong>Primer paso:</strong> Reuniones con el equipo de Orbyn Boost para mapear fee medio, tasa de conversi&oacute;n y % de leads internos vs externos. Con esos datos construimos dashboards y targets en la Fase Foundation.
                 </p>
             </div>
         </div>
@@ -1400,7 +1411,7 @@
                 Inversion en<br><span class="accent">startups</span>
             </h1>
             <p class="reveal" style="margin-top: clamp(0.5rem, 1vh, 0.8rem); max-width: 450px; margin-left: auto; margin-right: auto;">
-                Crowdfunding de startups con exits reales y ventaja fiscal.
+                Plataforma regulada CNMV. +40M&euro; invertidos, exits reales y ventaja fiscal.
             </p>
         </div>
         <span class="slide-num">16</span>
@@ -1412,7 +1423,7 @@
         <div class="slide-content">
             <div class="slide-label reveal">Diagnostico</div>
             <h2 class="reveal">Datos brutales.<br><span class="accent">Sin explotar.</span></h2>
-            <p class="reveal" style="max-width: 620px; margin-top: clamp(0.2rem, 0.4vh, 0.3rem);">Dozen tiene traccion real y prueba social verificable: exits como Glovo (unicornio), un filtro brutal del 2% en publicacion, y una ventaja fiscal que el inversor retail espa&ntilde;ol desconoce. Growth4U ya esta ejecutando un primer test de generacion de demanda &mdash; esta propuesta amplía el alcance a todos los pilares del Trust Engine.</p>
+            <p class="reveal" style="max-width: 620px; margin-top: clamp(0.2rem, 0.4vh, 0.3rem);">Dozen es plataforma de inversi&oacute;n en startups regulada CNMV. Traccion real: +40M&euro; invertidos, +20.000 inversores, 202 rondas completadas, exits verificables (Glovo, Swipcar, Parlem). Tickets desde 1.000&euro; con condiciones de VC. Growth4U ya ejecuta un primer test de generaci&oacute;n de demanda &mdash; esta propuesta ampl&iacute;a el alcance a todos los pilares del Trust Engine.</p>
             <div class="two-col" style="margin-top: clamp(0.5rem, 1vh, 0.7rem);">
                 <div class="reveal">
                     <div class="stat-grid" style="grid-template-columns: repeat(2, 1fr); margin-top: 0;">
@@ -1421,7 +1432,7 @@
                             <div class="stat-label">invertidos</div>
                         </div>
                         <div class="stat-card">
-                            <div class="stat-number" style="color: var(--dozen-accent);">+200</div>
+                            <div class="stat-number" style="color: var(--dozen-accent);">202</div>
                             <div class="stat-label">rondas</div>
                         </div>
                         <div class="stat-card">
@@ -1438,7 +1449,7 @@
                     <div style="font-weight: 700; margin-bottom: clamp(0.3rem, 0.6vh, 0.5rem); font-size: var(--h3-size); color: #fff;">Ventajas competitivas sin explotar</div>
                     <div class="feature-item">
                         <span class="feature-icon"></span>
-                        <span class="feature-text"><strong>Exits reales:</strong> Glovo (unicornio), Skitude, Parlem, Swipcar. Exits verificables que generan confianza instantanea &mdash; y que hoy no se comunican con fuerza.</span>
+                        <span class="feature-text"><strong>Exits reales:</strong> Glovo (unicornio), Swipcar, Parlem, Innovamat, Cuideo. Exits verificables que generan confianza instant&aacute;nea &mdash; y que hoy no se comunican con fuerza.</span>
                     </div>
                     <div class="feature-item">
                         <span class="feature-icon"></span>
@@ -1496,7 +1507,8 @@
         <div class="geo-pattern"></div>
         <div class="slide-content">
             <div class="slide-label reveal">Unit Economics</div>
-            <h2 class="reveal">Metricas <span class="accent">a validar</span></h2>
+            <h2 class="reveal">Metricas <span class="accent">que construiremos juntos</span></h2>
+            <p class="reveal" style="max-width: 620px; margin-top: clamp(0.2rem, 0.4vh, 0.3rem);">Ya estamos ejecutando un primer test de generaci&oacute;n de demanda con Dozen. Los datos iniciales informan esta propuesta. Ahora toca sistematizar la medici&oacute;n end-to-end para escalar lo que funciona.</p>
             <div class="stat-grid reveal" style="margin-top: clamp(0.8rem, 2vh, 1.2rem);">
                 <div class="stat-card">
                     <div class="stat-number" style="color: var(--dozen-accent);">?</div>
@@ -1517,7 +1529,7 @@
             </div>
             <div class="highlight-box reveal">
                 <p style="font-size: var(--small-size); opacity: 1;">
-                    <strong>Necesitamos:</strong> CAC actual por inversor &middot; Ticket medio &middot; % inversores que reinvierten &middot; Fuentes de captacion actual &middot; N&ordm; rondas/a&ntilde;o. Se validara en la Fase Foundation.
+                    <strong>Primer paso:</strong> Con los resultados del test actual, definimos baselines de CAC, ticket medio y reinversi&oacute;n. En Foundation construimos dashboards por canal y establecemos targets para escalar.
                 </p>
             </div>
         </div>
@@ -1761,7 +1773,55 @@
         <span class="slide-num">24</span>
     </section>
 
-    <!-- Slide 25: Coste de no actuar -->
+    <!-- Slide 25: Plan de Comunicacion -->
+    <section class="slide theme-orbyn" data-section="inversion">
+        <div class="texture-overlay"></div>
+        <div class="slide-content">
+            <div class="slide-label reveal">Comunicaci&oacute;n</div>
+            <h2 class="reveal">C&oacute;mo trabajamos <span class="accent">con vosotros</span></h2>
+            <p class="reveal" style="max-width: 620px; margin-top: clamp(0.2rem, 0.4vh, 0.3rem);">No desaparecemos hasta el informe mensual. Somos vuestro equipo de growth integrado, con comunicaci&oacute;n continua y visibilidad total sobre lo que hacemos y por qu&eacute;.</p>
+            <div class="two-col reveal" style="margin-top: clamp(0.5rem, 1.5vh, 1rem);">
+                <div>
+                    <div style="font-weight: 700; margin-bottom: clamp(0.3rem, 0.6vh, 0.5rem); font-size: var(--h3-size); color: var(--orbyn-dark);">Ritmo semanal por marca</div>
+                    <div class="feature-item">
+                        <span class="feature-icon">&#128197;</span>
+                        <span class="feature-text"><strong>Weekly meeting (30 min):</strong> Revisi&oacute;n de m&eacute;tricas, pr&oacute;ximas acciones, blockers. Una call semanal con cada marca.</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">&#128172;</span>
+                        <span class="feature-text"><strong>Canal Slack/WhatsApp:</strong> Comunicaci&oacute;n diaria por marca. Reportamos avances, pedimos inputs, compartimos wins en tiempo real.</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">&#128200;</span>
+                        <span class="feature-text"><strong>Dashboard live:</strong> M&eacute;tricas en tiempo real por marca y canal. Sin esperar al informe &mdash; visibilidad total, siempre.</span>
+                    </div>
+                </div>
+                <div>
+                    <div style="font-weight: 700; margin-bottom: clamp(0.3rem, 0.6vh, 0.5rem); font-size: var(--h3-size); color: var(--orbyn-dark);">Reporting mensual</div>
+                    <div class="feature-item">
+                        <span class="feature-icon">&#128202;</span>
+                        <span class="feature-text"><strong>Informe mensual detallado:</strong> Resultados por marca, por canal, aprendizajes clave y plan de acci&oacute;n para el mes siguiente.</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">&#127919;</span>
+                        <span class="feature-text"><strong>Review trimestral estrat&eacute;gica:</strong> An&aacute;lisis profundo de lo que funciona, lo que no, y ajustes de estrategia con el equipo directivo.</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">&#9889;</span>
+                        <span class="feature-text"><strong>Iteraci&oacute;n constante:</strong> No esperamos al final del mes para cambiar lo que no funciona. Kill criteria definidos &mdash; si un canal no rinde, pivotamos r&aacute;pido.</span>
+                    </div>
+                </div>
+            </div>
+            <div class="highlight-box reveal" style="margin-top: clamp(0.3rem, 0.8vh, 0.5rem);">
+                <p style="font-size: var(--small-size); opacity: 1;">
+                    <strong>En resumen:</strong> 4 weekly meetings/semana (una por marca) &middot; 4 canales Slack/WhatsApp &middot; Dashboards live &middot; Informe mensual &middot; Review trimestral. No somos una agencia que env&iacute;a PDFs &mdash; somos vuestro equipo.
+                </p>
+            </div>
+        </div>
+        <span class="slide-num">25</span>
+    </section>
+
+    <!-- Slide 26: Coste de no actuar -->
     <section class="slide theme-orbyn" data-section="inversion">
         <div class="texture-overlay"></div>
         <div class="slide-content">
@@ -1787,10 +1847,10 @@
                 </div>
             </div>
         </div>
-        <span class="slide-num">25</span>
+        <span class="slide-num">26</span>
     </section>
 
-    <!-- Slide 26: Proximos Pasos -->
+    <!-- Slide 27: Proximos Pasos -->
     <section class="slide theme-orbyn section-divider" data-section="inversion">
         <div class="texture-overlay"></div>
         <div class="slide-content">
@@ -1800,19 +1860,19 @@
                 <ul class="steps-list">
                     <li>
                         <span class="step-num">1</span>
-                        <span>Validar scope y pricing con Gon</span>
+                        <span>Reuni&oacute;n de alineaci&oacute;n: scope, prioridades y expectativas por marca</span>
                     </li>
                     <li>
                         <span class="step-num">2</span>
-                        <span>Reuniones con representantes de cada marca</span>
+                        <span>Reuniones individuales con el responsable de cada marca</span>
                     </li>
                     <li>
                         <span class="step-num">3</span>
-                        <span>Definir presupuesto medios/herramientas</span>
+                        <span>Definir presupuesto de medios, herramientas y accesos necesarios</span>
                     </li>
                     <li>
                         <span class="step-num">4</span>
-                        <span>Firma de acuerdo y kick-off</span>
+                        <span>Firma de acuerdo y kick-off &mdash; objetivo: primera semana de abril</span>
                     </li>
                 </ul>
             </div>
@@ -1825,7 +1885,7 @@
                 accounts@growth4u.com &middot; growth4u.io
             </p>
         </div>
-        <span class="slide-num">26</span>
+        <span class="slide-num">27</span>
     </section>
 
     <!-- ===========================================
